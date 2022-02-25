@@ -1,0 +1,54 @@
+{% extends 'base.html'%}
+
+{% block head %}
+<title>All Things Arsenal</title>
+<!--Title of the website-->
+{% endblock %}
+
+
+{% block body %}
+<!--Title of the homepage of the website-->
+<br>
+<br>
+<br>
+<div style="text-align: center;"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Arsenal_FC.svg/1200px-Arsenal_FC.svg.png" height = 125 width = 95></div>
+<br>
+
+<section class="jumbotron text-center" style="background-color:red">
+    <div class="container">
+        <h1 class="text-white">Hello, Gunners!</h1>
+        <p class="text-white">This site is called All Things Arsenal, and it is used to talk
+            about everything that happens with Arsenal Football Club! We will have weekly blog posts discussing matchday
+            and transfer rumours, and constantly update stats on each player at the club!
+            If you want some insight on Arsenal Football Club, please click the button below to view their official
+            website.</p>
+        <p><a class="btn btn-primary btn-lg" href="https://www.arsenal.com/" role="button">Arsenal Official &raquo;</a>
+        </p>
+    </div>
+    <br>
+    <br>
+    <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-md-4" style="background-color:#063672;">
+                <h2 class="text-white">Monthly Journal</h2>
+                <p class="text-white">You can find my monthly journal based on matchday reactions or transfer news! </p>
+                <p><a class="btn btn-secondary" href="/journal" role="button">Go to Page &raquo;</a></p>
+            </div>
+            <div class="col-md-4" style="background-color:#9C824A;">
+                <h2 class="text-white">Team Roster</h2>
+                <p class="text-white"> You can find the Arsenal First-Team Roster and their respective stats!</p>
+                <p><a class="btn btn-secondary" href="/roster" role="button">Go to Page &raquo;</a></p>
+            </div>
+            <div class="col-md-4" style="background-color: #063672;">
+                <h2 class="text-white">About Me</h2>
+                <p class="text-white">You can find my social media and learn more about me!</p>
+                <p><a class="btn btn-secondary" href="/aboutme" role="button">Go to Page &raquo;</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+</div>
+
+{% endblock %}

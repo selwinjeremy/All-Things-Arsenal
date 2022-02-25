@@ -1,0 +1,36 @@
+{% extends 'base.html'%}
+
+{% block head %} 
+<title>Weekly Journal</title> <!--Title of the journal page of the website-->
+{% endblock %}
+
+{% block body %} 
+<br>
+<br>
+<br>
+
+<!--Put the weekly journal text and button on the same line.-->
+<div>
+    <h1 style="display:inline" class="mt-0 mb-1">Monthly Journal</h1>
+    <a class="btn btn-primary float-right" href="/journal/new"> Add a New Entry</a>
+</div>
+<hr>
+
+    {% for post in posts%}
+        <h2 class="mt-0 mb-1">{{ post.title }}</h2> <!--Shows the title of the journal entry-->
+
+        {% if post.author%}
+            <small class="mt-0 mb-1">Written by: {{ post.author}} on {{post.date_posted}}</small> <!--Shows the author of the journal entry if there is one-->
+        {% else %}
+            <small class="mt-0 mb-1">Written by: Unknown on {{post.date_posted}}</small> <!--Shows the author of the journal entry if there is not one-->
+        {% endif %}
+        <br>
+        <br>
+  
+        <!--Shows the content of the journal entry-->
+        <p style="white-space:pre-wrap" class="mt-0 mb-1">{{ post.content }}</p>
+        <a class = "btn btn-light" href = '/journal/delete/{{post.id}}'>Delete</a> <!--Delete Button-->
+        <a class = "btn btn-light" href = '/journal/edit/{{post.id}}'>Edit</a> <!--Edit Button-->
+        <hr>
+    {% endfor %}
+{% endblock %}

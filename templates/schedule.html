@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+
+{% block head %}
+<title>Arsenal Schedule</title>
+<!--Title of the edit page of the website-->
+{% endblock %}
+
+{% block body %}
+<h1>Input Game</h1>
+<hr>
+<form>
+    Home Team:<input type="text" name="home_team"/>
+    <br>
+    Home Score:<input type="text" name="home_score"/>
+    <br>
+    Away Team:<input type="text" name="away_team"/>
+    <br>
+    Away Score:<input type="text" name="away_score"/>
+    <br>
+    Points:<input type="text" name="points"/>
+    <br>
+    <input type='submit' value='Save'>
+</form>
+<hr>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html'%}
+
+{% block head %} 
+<title>Edit Post</title> <!--Title of the edit page of the website-->
+{% endblock %}
+
+{% block body %}
+<h1>New Post</h1>
+    <hr>
+    <!--This is how you create a form in HTML-->
+    <h2>New Post:</h2>
+    <form action='/journal' method='POST'>
+
+        <label for="title">Title:</label>
+        <input class="form-control mr-sm-2" type="text" name='title' id='title' placeholder="Enter a Title" aria-label="Enter a Title">
+        <br>
+
+        <label for="author">Author:</label>
+        <input class="form-control mr-sm-2" type="text" name='author' id='author' placeholder="Enter your Name" aria-label="Enter your Name">
+        <br>
+
+        <label for="content">Post:</label>
+        <textarea class="form-control" name = 'content' id="content" placeholder="Tell your Story" aria-label="Tell your Story" rows="3"></textarea>
+        <br>
+
+        <input type='submit' value='Post'>
+    </form>
+    <hr>
+
+{% endblock %}

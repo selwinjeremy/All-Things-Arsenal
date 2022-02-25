@@ -1,0 +1,29 @@
+{% extends 'base.html'%}
+
+{% block head %} 
+<title>Edit Post</title> <!--Title of the edit page of the website-->
+{% endblock %}
+
+{% block body %}
+<h1>Editing Post</h1>
+    <hr>
+    <h2>Create a New Journal Entry:</h2>
+    <form action='/journal/edit/{{post.id}}' method='POST'>
+
+        <label for="title">Title:</label>
+        <input class="form-control mr-sm-2" type="text" name='title' id='title' value="{{ post.title }}" aria-label="Enter a Title">
+        <br>
+
+        <label for="author">Author:</label>
+        <input class="form-control mr-sm-2" type="text" name='author' id='author' value="{{ post.author }}" aria-label="Enter your Name">
+        <br>
+
+        <label for="content">Post:</label>
+        <textarea class="form-control" name = 'content' id="content" aria-label="Tell your Story" rows="3"> {{ post.content }} </textarea>
+        <br>
+
+        <input type='submit' value='Save'>
+    </form>
+    <hr>
+
+{% endblock %}

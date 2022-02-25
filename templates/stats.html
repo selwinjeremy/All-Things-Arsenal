@@ -1,0 +1,59 @@
+{% extends 'base.html'%}
+
+{% block head %}
+<title>Arsenal Stats</title>
+<!--Title of the edit page of the website-->
+{% endblock %}
+
+{% block body %}
+<br>
+<br>
+<br>
+
+<h1>Statistics</h1>
+<table class="table table-hover table-dark">
+
+  <thead>
+    <tr>
+      <th scope="col">Number</th>
+      <th scope="col">Name</th>
+      <th scope="col">GP</th>
+      <th scope="col">Goals</th>
+      <th scope="col">Assists</th>
+      <th scope="col">Shots</th>
+      <th scope="col">Yellow Cards</th>
+      <th scope="col">Red Cards</th>
+      <th scope="col">Saves</th>
+      <th scope="col">Clean Sheets</th>
+      <th scope="col">Edit</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {% for player in player_query %}
+    <tr>
+      <td>{{player.number}}</td>
+      <td>{{player.name}}</td>
+      <td>{{player.games}}</td>
+      <td>{{player.goals}}</td>
+      <td>{{player.assists}}</td>
+      <td>{{player.shots}}</td>
+      <td>{{player.yellow_cards}}</td>
+      <td>{{player.red_cards}}</td>
+      <td>{{player.saves}}</td>
+      <td>{{player.clean_sheets}}</td>
+
+      <td>
+        <form action='stats/editPlayer' method='POST'>
+          <input class="form-control mr-sm-2" type="hidden" name='id' id='id' value = {{player.id}}> 
+          <a href='stats/editPlayer'>
+          <input type='submit' name = editStatus value='Edit'>
+          </a>
+        </form>  
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

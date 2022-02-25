@@ -1,0 +1,52 @@
+{% extends 'base.html'%}
+
+{% block head %} 
+<title>Edit Player Stats</title> <!--Title of the edit page of the website-->
+{% endblock %}
+
+{% block body %}
+<hr>
+<br>
+<h2>Edit Player:</h2>
+<form action = '/roster/stats/editPlayer' method='POST'>
+
+    <label for="id"></label>
+    <input class="form-control mr-sm-2" type="hidden" name='id' id='id' value="{{ player.id }}">
+    <br>
+
+    <label for="games">Games Played:</label>
+    <input class="form-control mr-sm-2" type="text" name='games' id='games' value="{{ player.games }}">
+    <br>
+
+    <label for="goals">Goals Scored:</label>
+    <input class="form-control mr-sm-2" type="text" name='goals' id='goals' value="{{ player.goals }}">
+    <br>
+
+    <label for="assists">Assists Provided:</label>
+    <input class="form-control mr-sm-2" type="text" name='assists' id='assists' value="{{ player.assists }}">
+    <br>
+
+    <label for="shots">Shots Taken:</label>
+    <input class="form-control mr-sm-2" type="text" name='shots' id='shots' value="{{ player.shots }}">
+    <br>
+
+    <label for="yellow_cards">Yellow Cards:</label>
+    <input class="form-control mr-sm-2" type="text" name='yellow_cards' id='yellow_cards' value="{{ player.yellow_cards }}">
+    <br>
+
+    <label for="red_cards">Red Cards:</label>
+    <input class="form-control mr-sm-2" type="red_cards" name='red_cards' id='red_cards' value="{{ player.red_cards }}">
+    <br>
+
+    <label for="saves">Saves Made:</label>
+    <input class="form-control mr-sm-2" type="text" name='saves' id='saves' value="{{ player.saves }}">
+    <br>
+
+    <label for="clean_sheets">Clean Sheets:</label>
+    <input class="form-control mr-sm-2" type="text" name='clean_sheets' id='clean_sheets' value="{{ player.clean_sheets }}">
+    <br>
+
+    <input type='submit' name="editStatus" value='Save'>
+</form>
+<hr>
+{% endblock %}
